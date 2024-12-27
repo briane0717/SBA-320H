@@ -6,7 +6,6 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
       type="text"
       placeholder="Search YouTube"
       value={searchTerm}
-      // When the user types, 'setSearchTerm' is called to update state
       onChange={(e) => setSearchTerm(e.target.value)}
     />
   );
