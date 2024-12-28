@@ -70,6 +70,22 @@ const App = () => {
           </div>
         ))}
       </div>
+      {selectedVideo && (
+        <div className="video-player">
+          {/* Embedded YouTube video */}
+          <iframe
+            width="100%"
+            height="400px"
+            src={`https://www.youtube.com/embed/${selectedVideo.id.videoId}`}
+            allowFullScreen
+            title={selectedVideo.snippet.title}
+          ></iframe>
+          {/* Video title */}
+          <h3>{selectedVideo.snippet.title}</h3>
+          {/* Video description */}
+          <p>{selectedVideo.snippet.description}</p>
+        </div>
+      )}
     </div>
   );
 };
