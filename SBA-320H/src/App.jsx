@@ -14,7 +14,7 @@ const App = () => {
 
   const handleSearch = async () => {
     if (!searchTerm) return;
-
+    console.log("API Key:", API_KEY);
     try {
       const response = await fetch(
         `https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=5&q=${searchTerm}&key=${API_KEY}`
