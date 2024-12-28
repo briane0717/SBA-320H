@@ -10,7 +10,7 @@ const App = () => {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const API_KEY = "AIzaSyDDJytrNbjgFb5nkKKYBCCQSh4CcZtAlU4";
+  const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
   const handleSearch = async () => {
     if (!searchTerm) return;
