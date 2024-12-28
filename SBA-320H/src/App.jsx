@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 // Import the SearchBar component
 import SearchBar from "./components/SearchBar";
+import "./App.css";
 
 // Main App component
 const App = () => {
@@ -29,7 +30,7 @@ const App = () => {
       // Update the 'videos' state with the fetched data
       setVideos(data.items);
 
-      console.log(data.items); // Log the fetched data to the console
+      console.log(data.items);
     } catch (error) {
       console.error("Error fetching data from YouTube API:", error);
     }
@@ -47,14 +48,19 @@ const App = () => {
       />
 
       {/* Display video data */}
+      {/* Render the list of videos */}
       <div className="video-list">
         {videos.map((video) => (
-          <div key={video.id.videoId}>
-            <h3>{video.snippet.title}</h3>
+          // For each video in the fetched data, display its thumbnail and title
+          <div key={video.id.videoId} className="video-item">
+            {/* Display video thumbnail */}
             <img
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
+              className="video-thumbnail"
             />
+            {/* Display video title */}
+            <h3 className="video-title">{video.snippet.title}</h3>
           </div>
         ))}
       </div>
