@@ -10,6 +10,8 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   // State variable to store the fetched video data
   const [videos, setVideos] = useState([]);
+  // State to store the currently selected video
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   const API_KEY = "AIzaSyDDJytrNbjgFb5nkKKYBCCQSh4CcZtAlU4";
 
@@ -51,15 +53,19 @@ const App = () => {
       {/* Render the list of videos */}
       <div className="video-list">
         {videos.map((video) => (
-          // For each video in the fetched data, display its thumbnail and title
-          <div key={video.id.videoId} className="video-item">
-            {/* Display video thumbnail */}
+          // Render each video as an item in the list
+          <div
+            key={video.id.videoId}
+            className="video-item"
+            onClick={() => setSelectedVideo(video)}
+          >
+            {/* Video thumbnail */}
             <img
               src={video.snippet.thumbnails.medium.url}
               alt={video.snippet.title}
               className="video-thumbnail"
             />
-            {/* Display video title */}
+            {/* Video title */}
             <h3 className="video-title">{video.snippet.title}</h3>
           </div>
         ))}
