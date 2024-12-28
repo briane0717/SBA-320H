@@ -1,16 +1,12 @@
-// Import React library and hooks
 import React, { useState } from "react";
-// Import the SearchBar component
-import SearchBar from "./components/SearchBar";
+import SearchBar from "./SearchBar";
 
-// Main App component
 const App = () => {
   // State variable to store the search term
   const [searchTerm, setSearchTerm] = useState("");
 
   // Function to handle the search action
   const handleSearch = () => {
-    // Log the search term to the console for now
     console.log(`Searching for: ${searchTerm}`);
   };
 
@@ -28,4 +24,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default HandleSearch;
