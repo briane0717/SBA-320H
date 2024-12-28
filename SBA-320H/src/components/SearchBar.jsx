@@ -11,9 +11,9 @@ const SearchBar = ({ searchTerm, setSearchTerm, handleSearch }) => {
       {/* Input field for entering the search term */}
       <input
         type="text"
-        placeholder="Search YouTube" // Placeholder text
-        value={searchTerm} // Controlled input value
-        onChange={(e) => setSearchTerm(e.target.value)} // Update state on typing
+        placeholder="Search YouTube"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
 
       {/* Button to trigger the search */}
